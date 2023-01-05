@@ -2,6 +2,7 @@
 #wrap{
     position: relative;
     width: 100%;
+    overflow: hidden;
 }
 .web{
     display: none;
@@ -15,15 +16,17 @@
     width: 100%;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
+    z-index: 900;
 }
 /* mb top */
 .top{
     display: flex;
     justify-content: center;
+    height: 55px;
     padding-top: 10px;
 }
 .expo{
-    max-width: 356px;
+    width: 356px;
 }
 .expo img{
     width: 100%;
@@ -32,14 +35,15 @@
 .h_in{
     display: flex;
     justify-content: flex-start;
-    padding: 0 12px; 
+    padding: 0 12px;
+    height: 77px;
 }
 .logo{
     margin-bottom: 10px;
 }
 .logo a{
     display: block;
-    width: 213px;
+    max-width: 213px;
     height: auto;
     padding: 0 5px;
 }
@@ -71,7 +75,7 @@
 }
 .gnb .d1.close>a, .gnb .d1.close.down>a{
     background-size: 32px auto;
-    background-position: center right 14px;
+    background-position: center right 24px;
     background-repeat: no-repeat;
 }
 .gnb .d1.close>a{
@@ -93,6 +97,9 @@
     line-height: 44px;
     color: #fff;
     opacity: 0.8;
+}
+.sub_web{
+    display: none;
 }
 /* mb h_right 헤더 아이콘 */
 .h_right{
@@ -116,7 +123,7 @@
     display: block;
     width: 32px;
     height: 32px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     background-size: 24px auto;
     background-repeat: no-repeat;
     background-position: center;
@@ -131,7 +138,9 @@
 .ham a{
     background-image: url(../img/h_right_icon03.png);
 }
-
+.ham.close a{
+    background-image: url(../img/ham_close.svg);
+}
 /* web 브레이크포인트 1024px */
 @media screen and (min-width: 1024px){
     .mb{
@@ -168,11 +177,14 @@
         max-width: 1580px;
         align-items: flex-end;
         margin: 0 auto;
-        /* padding: 0 24px; */
+        padding: 0 24px;
         box-sizing: border-box;
     }
     .gnb{
-        padding: 0 0 20px 70px;
+        padding: 0 0 20px 
+    }
+    .gnb{
+        padding: 0 0 20px calc(2.6vw - 12px);
     }
     .gnb>ul{
         display: flex;
@@ -183,16 +195,17 @@
     }
     .gnb .d1{
         position: relative;
-        padding: 0 1.14vw;
+        padding: 0 0.98vw;
     }
     .gnb .d1 a{
         display: block;
-        padding: 0px 4px;
         font-size: 16px;
+        padding: 0px 4px;
         color: #1e1e1e;
         font-weight: 400;
         line-height: 1.47em;
         background-image: none;
+        opacity: 1;
     }
     .gnb .d1 a:hover{
         font-weight: 700;
@@ -211,7 +224,7 @@
     }
     .sub_web{
         position: absolute;
-        top: 60px;
+        top: 67px;
         left: 0;
         z-index: 1000;
         display: flex;
@@ -260,20 +273,28 @@
     }
     .sub_web ul li:nth-child(n+2) a:hover{
         color: #000;
+        filter: opacity(0.8) drop-shadow(0 0 0 #000);
+    }
+    .companyIntro li:nth-child(n+2) a{
+        padding-right: 20px;
+        box-sizing: border-box;
+        background-image: url(../img/company_arrow.svg);
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        background-position: right;
     }
     .Bg{
         display: none;
         position: relative;
         position: absolute;
         z-index: 0;
-        top: 120px;
+        top: 127px;
         left: 0;
         width: 100vw;
         height: 0;
         background-color: #fff;
         box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.09);
     }
-    
     .bn{
         display: block;
         padding: 40px 40px 90px 40px;
@@ -326,7 +347,19 @@
 }
 /* web 헤더 bn */
 @media screen and (max-width: 1200px) {
+  
     .bn{
         display: none;
     }
 }
+@media screen and (min-width: 1580px){
+    .h_in{
+        padding: 0 0px;
+    }
+    .gnb{
+        padding: 0 0 20px 2.6vw;
+    }
+    .h_right{
+        right: 0px;
+    }
+} 
