@@ -1,0 +1,332 @@
+@charset "utf-8";
+#wrap{
+    position: relative;
+    width: 100%;
+}
+.web{
+    display: none;
+}
+
+/* mb 모바일 */
+#header{
+    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+/* mb top */
+.top{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+.expo{
+    max-width: 356px;
+}
+.expo img{
+    width: 100%;
+    height: auto;
+}
+.h_in{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 12px; 
+}
+.logo{
+    margin-bottom: 10px;
+}
+.logo a{
+    display: block;
+    width: 213px;
+    height: auto;
+    padding: 0 5px;
+}
+.logo img{
+    width: 100%;
+    height: auto;
+}
+.gnb.web.view{
+    display: block;
+    position: absolute;
+    top: 132px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.8;
+}
+.gnb .d1{
+    border-bottom: 1px solid #fff;
+}
+.gnb .d1>a{
+    display: block;
+    font-size: 24px;
+    padding: 18px 14px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.5em;
+    opacity: 0.8;
+}
+.gnb .d1.close>a, .gnb .d1.close.down>a{
+    background-size: 32px auto;
+    background-position: center right 14px;
+    background-repeat: no-repeat;
+}
+.gnb .d1.close>a{
+    background-image: url(../img/icon_plus.svg);
+}
+.gnb .d1.close.down>a{
+    background-image: url(../img/icon_m.svg);
+}
+.sub_mb{
+    display: none;
+    padding: 0 28px;
+    padding-bottom: 18px;
+}
+.sub_mb.show{
+    display: block;
+}
+.sub_mb a{
+    font-size: 20px;
+    line-height: 44px;
+    color: #fff;
+    opacity: 0.8;
+}
+/* mb h_right 헤더 아이콘 */
+.h_right{
+    position: absolute;
+    bottom: 0px;
+    right: 12px;
+    display: flex;
+}
+.h_right div{
+    padding-left: 10px;
+}
+.h_right input{
+    display: none;
+}
+.h_right button{
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.search a, .lang a, .ham a, .h_right button{
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 24px;
+    background-size: 24px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -99999px;
+}
+.search button{
+    background-image: url(../img/h_right_icon01.png);
+}
+.lang a{
+    background-image: url(../img/h_right_icon02.png);
+}
+.ham a{
+    background-image: url(../img/h_right_icon03.png);
+}
+
+/* web 브레이크포인트 1024px */
+@media screen and (min-width: 1024px){
+    .mb{
+        display: none;
+    }
+    .web{
+        display: block;
+    }
+    .sub_mb{
+        display: none;
+    }
+    .sub_mb.show{
+        display: none;
+    }
+    /* web header */
+    #header{
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.09);
+    }
+    .top{
+        display: flex;
+        justify-content: center;
+        max-width: 1580px;
+        margin: 0 auto;
+    }
+    .expo{
+        max-width: 701px;
+    }
+    .expo img{
+        width: 100%;
+        height: auto;
+    }
+    .h_in{
+        position: relative;
+        max-width: 1580px;
+        align-items: flex-end;
+        margin: 0 auto;
+        /* padding: 0 24px; */
+        box-sizing: border-box;
+    }
+    .gnb{
+        padding: 0 0 20px 70px;
+    }
+    .gnb>ul{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .gnb .d1.close>a, .gnb .d1.close.down>a{
+        background-image: none;
+    }
+    .gnb .d1{
+        position: relative;
+        padding: 0 1.14vw;
+    }
+    .gnb .d1 a{
+        display: block;
+        padding: 0px 4px;
+        font-size: 16px;
+        color: #1e1e1e;
+        font-weight: 400;
+        line-height: 1.47em;
+        background-image: none;
+    }
+    .gnb .d1 a:hover{
+        font-weight: 700;
+        color: #000;
+    }
+    .bar a::before{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: -8px;
+        left: 0;
+        margin-top: 10px;
+        width: 1px;
+        height: 20px;
+        background-color: #aaa;
+    }
+    .sub_web{
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        width: 100%;
+        background-color: #fff;
+        display: none;
+    }
+    .sub_web.on{
+        display: flex;
+    }
+    .sub_web>ul{
+        padding: 40px 0 90px 40px;
+        box-sizing: border-box;
+        border-left: 1px solid #ddd;
+        width: 213px;
+    }
+    .sub_web>ul a:hover{
+        text-decoration: underline;
+    }
+    .d2{
+        font-size: 18px;
+        font-weight: 700;
+        padding-bottom: 20px;
+    }
+    .d2_01 a{
+        color: #4747b3;
+    }
+    .d2_02 a{
+        color: #0072c6;
+    }
+    .d2_03 a{
+        color: #009a93;
+    }
+    .d2_04 a{
+        color: #000;
+    }
+    .d2_05 a{
+        color: #6d7278;
+    }
+    .sub_web>ul li:nth-child(n+2){
+        padding: 5px 0;
+    }
+    .sub_web>ul li:nth-child(n+2) a{
+        color: #757575;
+        font-weight: 500;
+    }
+    .sub_web ul li:nth-child(n+2) a:hover{
+        color: #000;
+    }
+    .Bg{
+        display: none;
+        position: relative;
+        position: absolute;
+        z-index: 0;
+        top: 120px;
+        left: 0;
+        width: 100vw;
+        height: 0;
+        background-color: #fff;
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.09);
+    }
+    
+    .bn{
+        display: block;
+        padding: 40px 40px 90px 40px;
+    }
+    .bn>a{
+        display: block;
+        width: 253px;
+        height: 148px;
+        margin-bottom: 30px;
+    }
+    .h_sns{
+        display: flex;
+        justify-content: space-between;
+    }
+    .h_sns li{
+        width: 32px;
+        height: 32px;
+        background-color: #6d7278;
+        text-indent: -999999px;
+    }
+    .h_sns li a{
+        display: block;
+    }
+    .bn img{
+        width: 100%;
+        height: auto;
+    }
+    .h_right{
+        right: 24px;
+    }
+    .search{
+        position: relative;
+        display: flex;
+    }
+    .search input{
+        display: block;
+        border: 0;
+        width: 20.8vw;
+        border-bottom: 2px solid #000;
+        
+    }
+    .search button{
+        position: absolute;
+        right: 0;   
+    }
+    .search input::placeholder{
+       font-size: 16px;
+        color: #8f9094;
+    }
+}
+/* web 헤더 bn */
+@media screen and (max-width: 1200px) {
+    .bn{
+        display: none;
+    }
+}
